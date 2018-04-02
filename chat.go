@@ -89,7 +89,6 @@ func handleConn(conn net.Conn) {
 	go clientWriter(conn, client)
 
 	who := conn.RemoteAddr().String()
-	//toWho := conn.LocalAddr().String()
 	client <- "you are " + who
 
 	message := "entered :" + who
@@ -141,21 +140,3 @@ func parseMessage(messageText string) (toWho string, message string) {
 	}
 	return "", ""
 }
-
-//listens on the global entering and leaving channels for announcements of arriving and departing clients
-// func broadCaster() {
-// 	clients := make(map[client]bool)
-// 	for {
-// 		select {
-// 		case mesg := <-messages:
-// 			for cli := range clients {
-// 				cli <- mesg
-// 			}
-// 		case cli := <-entering:
-// 			clients[cli] = true
-// 		case cli := <-leaving:
-// 			delete(clients, cli)
-// 			close(cli)
-// 		}
-// 	}
-// }
