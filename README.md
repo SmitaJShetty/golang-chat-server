@@ -1,4 +1,5 @@
-#golang chat server
+# golang chat server
+
 A very simple chat-server implemented using channels in golang
 
 Current version requires recipient's port number to be prefixed to the message separated by a ":".
