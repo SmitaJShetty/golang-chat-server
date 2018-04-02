@@ -1,4 +1,4 @@
-#golang chat server
+# golang chat server
 
 A very simple chat-server implemented using channels in golang
 
